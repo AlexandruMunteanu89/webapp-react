@@ -14,6 +14,11 @@ function HomePage(){
             console.log(err);
         })
     }
+
+    useEffect(() => {
+    fetchMovies();
+  }, []);
+
     // definizione funzione renderng per card movies
     const renderMovies = () => {
         return movies.map((movie) => {
@@ -24,8 +29,7 @@ function HomePage(){
             )
         })
     }
-    useEffect(fetchMovies, []);
-
+    
     return (
         <>
             <h1 className="text-danger">Movies</h1>
@@ -36,4 +40,4 @@ function HomePage(){
         </>
     )
 }
-export default HomePage
+export default HomePage;

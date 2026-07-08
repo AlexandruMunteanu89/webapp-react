@@ -51,6 +51,9 @@ function MoviePage() {
                 </header>
                 {renderReview()}
             </section>
+            <footer className="border-top border-1 pt-2 mb-3 d-flex justify-content-center">
+                <Link className="btn btn-warning" to="/">Back to home</Link>
+            </footer>
              </>
     )
 }
