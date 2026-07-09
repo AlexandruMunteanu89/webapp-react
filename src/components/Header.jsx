@@ -5,26 +5,10 @@ import { Link } from "react-router-dom"
 function Header() {
 
  const menu = [
-    {
-      id: 1,
-      label: 'Home',
-      path: '/'
-    },
-    {
-      id: 2,
-      label: 'Movies',
-      path: '/movies'
-    },
-    {
-      id: 3,
-      label: 'About',
-      path: '/about'
-    },
-    {
-      id: 4,
-      label: 'Contact',
-      path: '/contact'  
-    }
+    { path: '/', label: 'Home' },
+    { path: '/movies', label: 'Movies' },
+    { path: '/about', label: 'About' },
+    { path: '/contact', label: 'Contact' },
   ];
 
   const [searchTerm, setSearchTerm] = useState('');
@@ -33,39 +17,36 @@ function Header() {
   const handleSearch = (e) => {
     e.preventDefault(); // stopa aggiornamento
     if(searchTerm.trim() !== '') {
-        console.log("Cerchi:", searchTerm);
+        
         navigate(`/search?query=${searchTerm}`); // ti porta alla pagina search
         setSearchTerm(''); // svuota l'input 
     }
   }
   
   return (
-    <header>
-      <nav className="navbar navbar-expand-xl navbar-light bg-light">
-        <div className="container">
-          <a className="navbar-brand" href="#">Movies Reviews</a>
-          <button
-            className="navbar-toggler d-lg-none"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#main-menu"
-            aria-controls="main-menu"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="main-menu">
-            <ul className="navbar-nav me-auto mt-2 mt-lg-0">
-              
-              {
-              menu.map(item =>  (
-                  <li key={item.id} className="nav-item"> 
-                    <NavLink className="nav-link" to={item.path}>{item.label}</NavLink>
-                  </li>
-                ))
-              }          
+    <header className="bg-light border-bottom">
+      <div className="container d-flex align-items-center justify-content-between py-2">
+        
+        {/* 1. BRAND - stanga */}
+        <a className="navbar-brand fw-semibold me-4" href="#">
+          Movies Reviews
+        </a>
 
-            </ul>
+        {/* 2. MENIU - mijloc */}
+        <ul className="navbar-nav d-flex flex-row gap-3 mb-0 me-auto">
+          {menu.map((item) => (
+            <li className="nav-item" key={item.path}>
+              <NavLink 
+                className={({isActive}) => 
+                  `nav-link px-2 ${isActive ? 'fw-bold text-success' : 'text-dark'}`
+                } 
+                to={item.path}
+              >
+                {item.label}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
             <form className="d-flex my-2 my-lg-0" onSubmit={handleSearch}>
               <input
                 className="form-control me-sm-2"
@@ -73,6 +54,7 @@ function Header() {
                 placeholder="Search"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
+                style={{width: '180px'}}
               />
               <button className="btn btn-outline-success my-2 my-sm-0"
                 type="submit">
@@ -80,8 +62,7 @@ function Header() {
               </button>
             </form>
           </div>
-        </div>
-      </nav>
+        
     </header>
   )
 }
