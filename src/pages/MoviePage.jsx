@@ -2,6 +2,7 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import ReviewsCard from "../components/ReviewsCard";
+import ReviewForm from "../components/ReviewForm";
 
 function MoviePage() {
 
@@ -50,6 +51,9 @@ function MoviePage() {
                     <h4>Our community reviews</h4>
                 </header>
                 {renderReview()}
+            </section>
+            <section>
+                {movie?.id && <ReviewForm movie_id={movie.id} refreshReviews={fetchMovie} />}
             </section>
             <footer className="border-top border-1 pt-2 mb-3 d-flex justify-content-center">
                 <Link className="btn btn-warning" to="/">Back to home</Link>
