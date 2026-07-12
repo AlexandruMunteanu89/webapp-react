@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage'
 import MoviePage from './pages/MoviePage'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import CreateMoviePage from './pages/CreateMoviePage'
 
 
 
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<DefaultLayout />}>
           <Route index element={<HomePage />} />
+          <Route path="/movies/create" element={<CreateMoviePage />} />
           <Route path="/movies/:id" element={<MoviePage />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

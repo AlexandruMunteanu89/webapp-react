@@ -54,6 +54,7 @@ export default function Header(){
               }          
 
             </ul>
+            <Link className="btn btn-sm btn-info me-3" to="/movies/create">Create Movie</Link>
             <form className="d-flex my-2 my-lg-0">
               <input
                 className="form-control me-sm-2"
