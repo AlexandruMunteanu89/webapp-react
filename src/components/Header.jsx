@@ -13,7 +13,7 @@ export default function Header(){
     {
       id: 2,
       label: 'Movies',
-      path: '/movies'
+      path: '/'
     },
     {
       id: 3,
