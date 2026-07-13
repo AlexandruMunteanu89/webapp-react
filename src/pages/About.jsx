@@ -1,10 +1,24 @@
 import { Link } from "react-router-dom";
 
+// import del context per il loader
+import { useGlobal } from "../contexts/GlobalContext";
+
 
 
 function About(){
 
+    // prendiamo dal context il valore che ci serve
+    const {setIsLoading} = useGlobal();
+    // funzione di disattivazione loader
+    const loadingFalse = () => {
+    // settiamo il loading attivo
+    setIsLoading(false)
+    }
 
+    // settiamo il loading attivo
+        setIsLoading(true);
+        
+        setTimeout(loadingFalse, 1500)
 
   return (
 
