@@ -41,7 +41,7 @@ function CreateMoviePage() {
             .then(() => {
                 // svuota il form
                 setFormData(initialValueForm);
-                navigate("/");
+                navigate("/movies");
             })
             .catch((err) => {
                 console.log(err);
