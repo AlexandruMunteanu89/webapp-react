@@ -27,7 +27,7 @@ export default function Home() {
         </div>
       </section>
 
-        <Link className="btn btn-primary btn-lg" to="/movies">
+        <Link className="btn btn-primary mb-4" to="/movies">
           Explore Movies
         </Link>
       
@@ -36,7 +36,7 @@ export default function Home() {
         </div>
       <section>
         <div className="container">
-          <p className="lead">Join our community and start sharing your movie reviews today! You can leave public reviews, rate movies, and connect with other film lovers. Be respectful and considerate in your interactions to foster a positive environment for everyone..</p>
+          <p className="mt-4">Join our community and start sharing your movie reviews today! You can leave public reviews, rate movies, and connect with other film lovers. Be respectful and considerate in your interactions to foster a positive environment for everyone..</p>
         </div>
       </section>
     </>

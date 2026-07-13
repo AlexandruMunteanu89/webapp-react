@@ -15,7 +15,7 @@ function DefaultLayout() {
     return (
         <>
           <Header />
-          <main className="min-vh-100">
+          <main className="container py-4 min-vh-100">
             <Outlet />
           </main>
           {isLoading && <Loader />}
