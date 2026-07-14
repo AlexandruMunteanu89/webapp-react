@@ -55,7 +55,7 @@ function HomePage(){
         <>
             <h1 className="text-danger">Movies</h1>
             <h2><i>Movie community</i></h2>
-            <div className="row row-cols-3 mt-4">
+            <div className="row row-cols-1 row-cols-md-3 g-4 mt-4">
                 {renderMovies()}
             </div>
         </>

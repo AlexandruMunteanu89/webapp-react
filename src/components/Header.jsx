@@ -31,7 +31,7 @@ export default function Header(){
     <header>
       <nav className="navbar navbar-expand-xl navbar-light bg-light">
         <div className="container">
-          <a className="navbar-brand" href="#">Movies Reviews</a>
+          <i className="bi bi-film me-2"></i>
           <button
             className="navbar-toggler d-lg-none"
             type="button"
